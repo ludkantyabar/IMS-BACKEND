@@ -51,6 +51,11 @@ public class Transaction {
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
 
+    @PrePersist
+    protected void onCreate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
