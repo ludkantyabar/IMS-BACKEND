@@ -1,12 +1,13 @@
 package com.phegondev.InventoryManagementSystem.entity;
 
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -24,4 +25,8 @@ public class Supplier {
     private String name;
 
     private String address;
+
+    private final LocalDateTime createdAt = LocalDateTime.now();
+
+    private LocalDateTime updatedAt;
 }
